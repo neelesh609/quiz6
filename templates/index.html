@@ -23,23 +23,21 @@
             <h1>Neelesh Shashidhar</h1>
             <h1>1001860682</h1>
         
+ <form action="{{url_for('game')}}" enctype=multipart/form-data method="POST" style="width:30%;">
+
+            <b>Login</b>
+            <input type="radio" name="user" value="player1" id="player1">
+            <label for="player1">Player 1</label>
+            <input type="radio" name="user" value="player2" id="player2">
+            <label for="player2">Player 2</label><br><br>
+            <label for="username">Players enter your name to enter</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="room">Enter the Room number</label>
+            <input type="text" id="room" name="room"><br><br>
+            <a href="/game"><input type="submit" value="login"></a>
+
+    </form>
 
 
-
-<div class="home">
-   <form action="/index" method="post">
-
-        <p>Please Select the category: </p>
-
-        <input type="radio" id="teacher" name="category" value="professor">Teacher<br>
-        <input type="radio" id="student" name="category" value="student">Student<br>
-        <input type="radio" id="adminst" name="category" value="adminst">Admin<br><br>
-
-         Name: <input type="Name" id="iname" name="iname" placeholder="Enter your Name" required><br/><br/>
-         room: <input type="room" id="iroom" name="iroom" placeholder="Enter Room number" required><br/><br/>
-        <input type="submit" value="Login"><br/><br/>
-   
-  </form>
-</div><br/>
-        </div></body>
+</body>
 </html>
