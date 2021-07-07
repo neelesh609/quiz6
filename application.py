@@ -26,6 +26,7 @@ def game():
         session['user'] = username
         session['room'] = room
         session['usertype'] = usertype
+        session['stones'] = stones
 
         if usertype == 'player1':
             return render_template('game.html', username=username, room=room, category=usertype, legend = "Player 1")
@@ -49,14 +50,15 @@ def join(message):
     room = message['room']
     join_room(room)
     usertype = session['usertype']
-    emit('status', {'msg': usertype + " " + message['username'] + ' has entered the room.'}, room=room)
+    emit('status', {'msg': usertype + " " + message['username'] + ' has entered the room number : ' +room}, room=room)
 
 
 @socketio.on('text', namespace='/game')
 def text(message):
     room = message['room']
     usertype = session['usertype']
-    emit('message', {'msg': usertype + " " + message['username'] + ' : ' + message['msg']}, room=room)
+    stones = session['stones']
+    emit('message', {'msg': usertype + " " + room + " "+ stones+" "+ message['username'] + ' : ' + message['msg']}, room=room)
 
 
 @application.route("/logout")
