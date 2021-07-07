@@ -88,7 +88,7 @@
                 {
                     text = text+"_answer";
                 }
-                socket.emit('text', {  msg:text, username:"{{username}}",  room:"{{room}}" });
+                socket.emit('text', {  msg:text, username:"{{username}}",  room:"{{room}}" , stones:"{{stones}}" });
         });
 
 
