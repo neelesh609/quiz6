@@ -3,21 +3,21 @@ from flask import Flask, render_template, request, redirect, url_for, session,g
 from flask_socketio import SocketIO, join_room, leave_room, emit
 
 application = Flask(__name__)
-application.secret_key = "Neelesh_0609"
+application.secret_key = "nelish069"
 socketio = SocketIO(application)
-
-application = Flask(__name__)
 
 
 @application.route('/')
 def index():
     return render_template('index.html')
 
+
 @application.route('/game', methods=['GET', 'POST'])
 def game():
     if request.method == 'POST':
         usertype = request.form.get('user')
         username = request.form.get('username')
+        stones = request.form.get("stone")
         room = request.form.get('room')
         print(usertype)
         print(username)
