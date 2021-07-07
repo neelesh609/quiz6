@@ -58,7 +58,7 @@ def text(message):
     room = message['room']
     usertype = session['usertype']
     stones = session['stones']
-    emit('message', {'msg': usertype + " " + room + " "+ stones+" "+ message['username'] + ' : ' + message['msg']}, room=room)
+    emit('message', {'msg': usertype + " " + room + " "+ stones +" "+ message['username'] + ' : ' + message['msg']}, room=room)
 
 
 @application.route("/logout")
